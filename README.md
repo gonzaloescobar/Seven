@@ -1,24 +1,9 @@
-# README
+# Seven, by Breakpoint.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Some conventions to work on it:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Follow existing coding conventions.
+* Use feature branch.
+* Add descriptive commits messages in English to every commit.
+* Write code and comments in English.
+* Use REST routes.
