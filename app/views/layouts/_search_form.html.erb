@@ -1,0 +1,14 @@
+<section class="search-form">
+ <%= form_for search_entity, method: :get do |f| %>
+  <div class="input-group">
+   <%= label_tag :keywords, nil, class: "sr-only" %>
+   <%= text_field_tag :keywords, nil, placeholder: "Buscar",
+                       class: "form-control", value: "#{@keywords}" %>
+   <span class="input-group-btn">
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+     <span class="glyphicon glyphicon-search"></span> Buscar <%= "#{word}" %>
+    <% end %>
+   </span>
+  </div>
+ <% end %>
+</section>

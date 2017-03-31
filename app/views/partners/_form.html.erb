@@ -1,0 +1,27 @@
+<div class="container-fluid">
+ <div class="row">
+  <div class="panel-body">
+   <%= form_for(@partner) do |f| %>
+    <% if @partner.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(brand.errors.count, "error") %> prohibited this partner from being saved:</h2>
+
+      <ul>
+       <% partner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+       <% end %>
+      </ul>
+     </div>
+    <% end %>
+
+    <div class="form-group">
+     <%= f.text_field :first_name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
+     <%= f.text_field :last_name, autofocus: true, placeholder: "Apellido", class: "form-control" %>
+     <%= f.text_field :dni, autofocus: true, placeholder: "DNI", class: "form-control" %>
+    </div>
+
+    <%= f.submit "Aceptar", class: "btn btn-success" %>
+   <% end %>
+  </div>
+ </div>
+</div>
