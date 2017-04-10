@@ -1,4 +1,6 @@
 language: ruby
 rvm:
   - 2.3.1
+before_script:
+  - psql -c "CREATE USER seven WITH PASSWORD 'seven';" -U postgres
 script: bundle exec rake
