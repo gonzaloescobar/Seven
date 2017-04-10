@@ -11,11 +11,11 @@ class PartnersController < ApplicationController
 
     if params[:keywords].present?
       @keywords = params[:keywords]
-      @partners = Partner.where("lower(first_name) LIKE '%#{@keywords.downcase}%'").order(:first_name)
+      @partners = Partner.where("lower(last_name) LIKE '%#{@keywords.downcase}%'").order(:last_name)
                  .offset(PAGE_SIZE * @page).limit(PAGE_SIZE)
-                 number_of_records = Partner.where("lower(first_name) LIKE '%#{@keywords.downcase}%'").count
+                 number_of_records = Partner.where("lower(last_name) LIKE '%#{@keywords.downcase}%'").count
     else
-      @partners = Partner.order(:first_name).offset(PAGE_SIZE * @page).limit(PAGE_SIZE)
+      @partners = Partner.order(:last_name).offset(PAGE_SIZE * @page).limit(PAGE_SIZE)
       number_of_records = Partner.count
     end
       @number_of_pages = (number_of_records % PAGE_SIZE) == 0 ?
