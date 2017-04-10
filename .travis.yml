@@ -6,6 +6,7 @@ services:
   - postgresql
 
 before_script:
-  - psql -c 'create database seven_test;' -U postgres
+  - psql -c "create database seven_test;" -U postgres
+  - psql -c "ALTER DATABASE sample_app_test OWNER TO demo_app;" -U postgres
   - psql -c "CREATE USER seven WITH PASSWORD 'seven';" -U postgres
 script: bundle exec rake
