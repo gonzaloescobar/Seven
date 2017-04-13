@@ -1,19 +1,17 @@
-default: &default
-  adapter: postgresql
-  user: seven
-  password: seven
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
-  host: localhost
-
-development:
-  <<: *default
-  database: seven_development
 
 test:
-  <<: *default
-  database: seven_test
+  adapter: sqlite3
+  database: ":memory:"
+  timeout: 500
 
 production:
-  <<: *default
-  database: seven_production
+  adapter: postgresql
+  encoding: unicode
+  database: pg_heroku
+  pool: 5
+  timeout: 5000
