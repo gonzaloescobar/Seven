@@ -1,4 +1,4 @@
-# Seven, by Breakpoint.
+# Seven, by Breakpoint. [![Build Status](https://travis-ci.org/gonzaloescobar/Seven.svg?branch=master)](https://travis-ci.org/gonzaloescobar/Seven)
 
 Some conventions to work on it:
 
