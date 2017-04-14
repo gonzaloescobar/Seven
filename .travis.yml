@@ -1,13 +1,7 @@
 language: ruby
 rvm:
   - 2.3.1
-
-services:
-  - postgresql
-
+bundler_args: --without development production
 before_script:
-  - psql -c "create database seven_test;" -U postgres
-  - psql -c "CREATE USER seven WITH PASSWORD 'seven';" -U postgres
-  - psql -c "ALTER DATABASE seven_test OWNER TO seven;" -U postgres
-
-script: bundle exec rake
+- sh -e /etc/init.d/xvfb start
+script: bundle exec rake RAILS_ENV=test
